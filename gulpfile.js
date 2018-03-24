@@ -6,7 +6,7 @@ var sass = require('gulp-sass');
 var csso = require('gulp-csso');
 
 gulp.task('js', function(){
-	return gulp.src(["node_modules/simplelightbox/dist/simple-lightbox.js", "src/*.js"])
+	return gulp.src(["src/*.js"])
 		.pipe(concat('script.min.js'))
 		.pipe(uglify())
 		.pipe(gulp.dest('./js'));
@@ -19,7 +19,7 @@ gulp.task('sass', function () {
 });
 
 gulp.task('css', function(){
-	return gulp.src(["node_modules/simplelightbox/dist/simplelightbox.css", "src/*.css"])
+	return gulp.src(["src/*.css"])
 		.pipe(concat('style.min.css'))
 		.pipe(minifyCSS())
 		.pipe(csso())
